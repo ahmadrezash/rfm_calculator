@@ -1,15 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RFM Analysis</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+    </style>
 </head>
 <body>
-<h1>RFM Analysis</h1>
-<input type="file" id="fileInput" accept=".xlsx">
-<button onclick="generateXLSX()">Generate XLSX</button>
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <div class="container-fluid justify-content-start">
+        <a class="navbar-brand" href="#">
+            <!--            <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">-->
+            RFM Analysis - کاری از احمدرضا شریفیان زاده -
+            <a href="https://t.me/AhmadSharifian" aria-valuetext="dd" class="btn btn-primary" type="button"> تلگرام </a>
+            <button type="button" class="btn btn-secondary m-3">09198258119</button>
+
+        </a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card text-center">
+                <div class="card-header">
+                    تحلیل گر RFM
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+<!--                        <div class="row">-->
+<!--                            <div class="col-8">-->
+                                <label for="fileInput" class="form-label">آپلود فایل</label>
+                                <input class="form-control" type="file" id="fileInput" accept=".xlsx">
+<!--                            </div>-->
+<!--                            <div class="col-4">-->
+                                <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
+<!--                            </div>-->
+
+                        </div>
+                    </div>
+
+                    <!--                    <a href="#" class="btn btn-primary">Go somewhere</a>-->
+                <div class="card-footer text-muted">
+                    <button class="btn btn-primary" onclick="generateXLSX()">دریافت تحلیل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<h1>RFM Analysis</h1>-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+        </div>
+        <div class="col">
+            <!--            <div class="card text-center">-->
+            <!--                <div class="card-header">-->
+            <!--                    RFM Analysis Calculator-->
+            <!--                </div>-->
+            <!--                <div class="card-body">-->
+            <!--                    <div class="mb-3">-->
+            <!--                        <label for="fileInput" class="form-label">آپلود فایل</label>-->
+            <!--                        <input class="form-control" type="file" id="fileInput" accept=".xlsx">-->
+            <!--                    </div>-->
+            <!--                    &lt;!&ndash;                    <a href="#" class="btn btn-primary">Go somewhere</a>&ndash;&gt;-->
+            <!--                </div>-->
+            <!--                <div class="card-footer text-muted">-->
+            <!--                    <button class="btn btn-primary" onclick="generateXLSX()">Get RFM Analysis</button>-->
+            <!--                </div>-->
+            <!--            </div>-->
+
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+<!--<input type="file" id="fileInput" accept=".xlsx">-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 <script>
     // Sample orders data
