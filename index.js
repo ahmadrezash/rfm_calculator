@@ -1,8 +1,79 @@
 // Sample orders data
 let orders = [];
-const recency_rate = 0.3;
-const frequency_rate = 0.3;
-const monetary_rate = 0.4;
+let recency_rate = 0.3;
+let frequency_rate = 0.3;
+let monetary_rate = 0.4;
+
+function updateParamRate(event) {
+    const res = event.target.value();
+    if (res === "frequency_rate") {
+        recency_rate = 0.2;
+        frequency_rate = 0.6;
+        monetary_rate = 0.2;
+    } else if (res === "monetary_rate") {
+        recency_rate = 0.2;
+        frequency_rate = 0.2;
+        monetary_rate = 0.6;
+    } else if (res === "recency_rate") {
+        recency_rate = 0.2;
+        frequency_rate = 0.2;
+        monetary_rate = 0.6;
+
+    } else if (res === "equal_rate") {
+        recency_rate = 0.3;
+        frequency_rate = 0.3;
+        monetary_rate = 0.4;
+
+    }
+
+}
+
+let global_res = [
+    {name: "Champions", count: 0, percent: 0},
+    {name: "Loyal Customers", count: 0, percent: 0},
+    {name: "Potential Loyalists", count: 0, percent: 0},
+    {name: "New Customers", count: 0, percent: 0},
+    {name: "Promising", count: 0, percent: 0},
+    {name: "Need Attention", count: 0, percent: 0},
+    {name: "About to Sleep", count: 0, percent: 0},
+    {name: "At Risk", count: 0, percent: 0},
+    {name: "Can't Lose Them", count: 0, percent: 0},
+    {name: "Hibernating", count: 0, percent: 0},
+    {name: "Lost", count: 0, percent: 0},
+];
+
+function compute_global_res(all_res) {
+    const count_of_data = all_res.length
+    all_res.forEach(res => {
+        const label = res['label'];
+        global_res.forEach(rec => {
+            if (rec['name'] === label) {
+                rec['count'] += 1;
+                rec['percent'] = Math.round(rec['count'] / count_of_data * 100);
+            }
+        })
+    })
+    console.log(global_res)
+
+    // Find a <table> element with id="myTable":
+    var table = document.getElementById("table_id");
+
+// Create an empty <tr> element and add it to the 1st position of the table:
+    let i = 0;
+    global_res.forEach(rec => {
+        i += 1;
+        var row = table.insertRow(-1);
+        row.insertCell(-1).innerHTML = i;
+        row.insertCell(-1).innerHTML = rec['name'];
+        row.insertCell(-1).innerHTML = rec['count'];
+        row.insertCell(-1).innerHTML = rec['percent'];
+        // var cell1 = row.insertCell(-1);
+        // var cell1 = row.insertCell(-1);
+        // var cell1 = row.insertCell(-1);
+
+
+    })
+}
 
 function handleFileInput(event) {
     const file = event.target.files[0];
@@ -72,8 +143,12 @@ function calculateRFM(orders) {
             last_name: last_name,
             tel: tel,
             email: email,
+            recency_rank: recency_rank,
+            frequency_rank: frequency_rank,
+            monetary_rank: monetary_rank,
         }
-        tmp["rfm_score"] = Math.round((.3 * recency_rank + .3 * frequency_rank + .4 * monetary_rank) * 10000 * 0.05) / 100 * 11 / 5 + 1;
+        // updateParamRate()
+        tmp["rfm_score"] = Math.round((recency_rate * recency_rank + frequency_rate * frequency_rank + monetary_rate * monetary_rank) * 10000 * 0.05) / 100 * 11 / 5 + 1;
 
         let lbl;
         if (tmp["rfm_score"] > 10) {
@@ -131,6 +206,7 @@ function getRank(value, list, asc) {
 // Function to generate XLSX file
 function generateXLSX() {
     const rfmData = calculateRFM(orders);
+    compute_global_res(rfmData)
 
     // Create XLSX workbook and worksheet
     const workbook = XLSX.utils.book_new();
@@ -154,3 +230,4 @@ function generateXLSX() {
 }
 
 document.getElementById('fileInput').addEventListener('change', handleFileInput);
+document.getElementById('param_rate_id').addEventListener('change', updateParamRate);
