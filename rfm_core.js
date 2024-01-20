@@ -1,4 +1,4 @@
-function calculateRFM(orders) {
+function calculateRFM(orders, monetary_rate, frequency_rate, recency_rate) {
     const rfmData = {};
 
 
