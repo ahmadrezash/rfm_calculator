@@ -1,23 +1,14 @@
 function updateParamRate(event) {
-    const res = event.target.value();
-    if (res === "frequency_rate") {
-        recency_rate = 0.2;
-        frequency_rate = 0.6;
-        monetary_rate = 0.2;
-    } else if (res === "monetary_rate") {
-        recency_rate = 0.2;
-        frequency_rate = 0.2;
-        monetary_rate = 0.6;
-    } else if (res === "recency_rate") {
-        recency_rate = 0.2;
-        frequency_rate = 0.2;
-        monetary_rate = 0.6;
-    } else if (res === "equal_rate") {
-        recency_rate = 0.3;
-        frequency_rate = 0.3;
-        monetary_rate = 0.4;
-
+    const res = event.target.value;
+    let scores = {
+        monetary_rate: [0.2, 0.2, 0.6],
+        frequency_rate: [0.2, 0.6, 0.2],
+        equal_rate: [0.3, 0.3, 0.4],
     }
+    state["recency_rate"] = scores[0];
+    state["frequency_rate"] = scores[1];
+    state["monetary_rate"] = scores[2];
+
 
 }
 
@@ -34,7 +25,7 @@ function handleFileInput(event) {
             const sheet = XLSX.utils.sheet_to_json(workbook.Sheets[sheetName]);
 
             // Assuming the sheet has columns like 'customer', 'date', 'amount'
-            orders = sheet.map(row => ({
+            state["orders"] = sheet.map(row => ({
                 customer_id: row.customer_id,
                 first_name: row.first_name,
                 last_name: row.last_name,
