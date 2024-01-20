@@ -37,9 +37,9 @@ function calculateRFM(orders, monetary_rate, frequency_rate, recency_rate) {
             last_name: last_name,
             tel: tel,
             email: email,
-            recency_rank: recency_rank,
-            frequency_rank: frequency_rank,
-            monetary_rank: monetary_rank,
+            // recency_rank: recency_rank,
+            // frequency_rank: frequency_rank,
+            // monetary_rank: monetary_rank,
         }
         // updateParamRate()
         tmp["rfm_score"] = Math.round((recency_rate * recency_rank + frequency_rate * frequency_rank + monetary_rate * monetary_rank) * 10000 * 0.05) / 100 * 11 / 5 + 1;
