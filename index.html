@@ -3,106 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RFM Analysis</title>
-    <link rel="icon" type="image/x-icon" href="img/504629.png">
+    <title>Icon-Based Bottom Navigation Bar</title>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.5/xlsx.full.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+    <script src="./assets/libs/xlsx/xlsx.full.min.js"></script>
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="./assets/libs/bootstrap5/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-    <div class="container-fluid justify-content-start">
-        <a class="navbar-brand" href="#">
-            RFM Analysis - کاری از احمدرضا شریفیان زاده -
-            ارتباط با ما:
-            <a href="https://t.me/AhmadSharifian" aria-valuetext="dd" type="button" class="m-2">
-                <i class="fa fa-telegram" style="font-size:48px;color:cornflowerblue"></i>
-            </a>
-            <a href="tel:+989198258119" class="m-2">
-                <i class="fa fa-phone" aria-hidden="true" style="font-size:48px;color:blueviolet"></i>
-            </a>
-
-        </a>
-    </div>
-</nav>
 
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-2">
-            <div class="card text-center">
-                <div class="card-header">
-                    تنظیمات پیشرفته
-                </div>
-                <div class="card-body">
-                    <label for="param_rate_id"> در تحلیل شما کدوم مهمتره؟</label>
+    <!-- Nav tabs -->
+    <ul class="nav nav-pills nav-justified fixed-bottom p-0" id="myTabs">
+        <li class="nav-item ">
+            <a class="nav-link active" id="tab3-tab" data-bs-toggle="tab" href="#tab3">
+                <i class="fas fa-chart-pie fa-lg"></i>
+                <p class="m-0"> محاسبه گر </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2">
+                <i class="fas fa-home fa-lg"></i>
+                <p class="m-0"> صفحه اصلی </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " id="tab1-tab" data-bs-toggle="tab" href="#tab1">
+                <i class="fas fa-wallet fa-lg"></i>
+                <p class="m-0"> درباره ما </p>
+            </a>
+        </li>
+    </ul>
 
-                    <select name="param_rate" id="param_rate_id">
-                        <option value="equal_rate" selected>اهمیت برابر</option>
-                        <option value="frequency_rate">تکرار خرید</option>
-                        <option value="monetary_rate">ارزش خرید</option>
-                        <option value="recency_rate">آخرین خرید</option>
-                    </select>
-                </div>
-            </div>
+    <!-- Tab content -->
+    <div class="tab-content">
+        <div class="tab-pane fade" id="tab1">
+            <h3>Content for Tab 2</h3>
+            <p>This is the content for the second tab.</p>
         </div>
-        <div class="col-md-6">
-            <div class="card text-center">
-                <div class="card-header">
-                    تحلیل گر RFM
+        <div class="tab-pane fade" id="tab2">
+            <h3>Content for Tab 3</h3>
+            <p>This is the content for the third tab.</p>
+        </div>
+        <div class="tab-pane fade show active " id="tab3">
+            <div class="container">
+                <h3>
+                    این ابزار چه کمکی می‌کند؟
+                </h3>
+                <p class=" text-break">
+                    فقط با بررسی این موارد به شناخت عمیق تری از مخاطبانتان برسید
+                </p>
+                <img src="./assets/img/rfm-model.webp" width="100%" alt="..."/>
+                <div class="container mt-4">
+                    <p class="text-right text-break text-justify">
+                        مدل RFM به شما کمک می‌کند تا مشتریان خود را بهتر بشناسید و استراتژی‌های بازاریابی مناسب‌تری را برای هر گروه از آن‌ها انتخاب کنید. این مدل به شما امکان می‌دهد تا به طور دقیق‌تری به نیازها و تمایلات مشتریان خود واکنش نشان دهید و از این طریق بازدهی بیشتری را از استراتژی‌های
+                        بازاریابی
+                        خود به دست آورید.
+                    </p>
                 </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="fileInput" class="form-label">آپلود فایل</label>
-                        <input class="form-control" type="file" id="fileInput" accept=".xlsx">
-                        <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
+
+                <!--            <div class="embed-responsive embed-responsive-16by9">-->
+                <!--                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" width="100%" height=""></iframe>-->
+                <!--            </div>-->
+                <div class="mx-auto">
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
+                                        <!-- Number inside the button -->
+                                        <span style="font-size: small">1</span>
+                                    </a>
+
+                                </div>
+                                <div class="col-10">
+                                    <button type="button" class="btn  btn-success rounded-pill"
+                                            style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
+                                            data-bs-toggle="modal" data-bs-target="#input_file_modal_id">
+                                        انتخاب فایل
+                                    </button>
+                                </div>
+                            </div>
+                            <!--                            <div class="col-2 ">-->
+                            <!--                                <button class="btn rounded-circle btn-xl " type="button"-->
+                            <!--                                        style="background-color:white; border-color: #BFA25D; color: #BFA25D;"-->
+                            <!--                                        data-bs-toggle="modal" data-bs-target="#selectModal">-->
+                            <!--                                    <i class="fa fa-cog" aria-hidden="true"></i>-->
+                            <!--                                </button>-->
+                            <!--                            </div>-->
+                        </div>
+
+                        <div class="col-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="row mt-3">
+                                <div class="col-2">
+                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
+                                        <span style="font-size: small">2</span>
+                                    </a>
+                                </div>
+                                <div class="col-8">
+                                    <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white;width: 100%;" id="run_id">اجرا</button>
+                                </div>
+                                <div class="col-2">
+                                    <button class="btn rounded-circle btn-xl " type="button"
+                                            style="background-color:white; border-color: #BFA25D; color: #BFA25D;"
+                                            data-bs-toggle="modal" data-bs-target="#selectModal">
+                                        <i class="fa fa-cog" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-2"></div>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-2">
+                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
+                                        <!-- Number inside the button -->
+                                        <span style="font-size: small">3</span>
+                                    </a>
+                                </div>
+                                <div class="col-10">
+                                    <button type="button" class="btn  btn-success rounded-pill" style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
+                                            data-bs-toggle="modal" data-bs-target="#resModal">
+                                        مشاهده نتایج
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-                <div class="card-footer text-muted">
-                    <button class="btn btn-primary" onclick="generateXLSX()">دریافت تحلیل</button>
-                </div>
             </div>
         </div>
     </div>
-    <div class="row justify-content-center">
-        <div class="col-md-6 mt-3">
-
-            <table class="table" id="table_id">
-                <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">عنوان</th>
-                    <th scope="col">تعداد</th>
-                    <th scope="col">درصد</th>
-                </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
+</div>
+<!-- Modal -->
+<div class=" modal fade" id="input_file_modal_id" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="centeredModalLabel">آپلود فایل</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Modern file input -->
+                <div class="mb-3">
+                    <!--                    <label for="fileInput" class="form-label">Choose a file</label>-->
+                    <input type="file" class="form-control" id="fileInput" aria-describedby="fileHelp">
+                    <div id="fileHelp" class="form-text">فایل را انتخاب کنید</div>
+                    <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
+                </div>
+                <!-- Additional content can be added here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">بازگشت</button>
+            </div>
         </div>
-    </div>
-    <div class="row justify-content-center">
-        <div class="col-md-8 mt-3">
-            <img src="img/rfm-model.webp" width="600" alt="rfm table">
-        </div>
-        <div class="col-md-8 mt-3">
-            <img src="img/table.jpg" width="600" alt="rfm table">
-        </div>
-
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="event_handlers.js"></script>
-<script src="index.js"></script>
-<script src="rfm_core.js"></script>
+<div class="modal fade" id="selectModal" tabindex="-1" aria-labelledby="modernModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modernModalLabel">Modern Modal with Select Input</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Modern select input -->
+                <div class="mb-3">
+                    <label for="param_rate_id" class="form-label">Select an option</label>
+                    <select class="form-select" id="param_rate_id" aria-label="Select an option" data-mobile="True">
+                        <option selected>Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                </div>
+                <!-- Additional content can be added here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="resModal" tabindex="-1" aria-labelledby="modernModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="resModalLabel">Modern Modal with Select Input</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white" id="get_res_id">
+                    دریافت نتایج
+                </button>
+
+                <!-- Modern select input -->
+                <div class="mb-3">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 mt-3">
+
+                            <table class="table" id="table_id">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">عنوان</th>
+                                    <th scope="col">تعداد</th>
+                                    <th scope="col">درصد</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional content can be added here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Bootstrap JS (optional) -->
+<!--<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>-->
+<script src="./assets/libs/bootstrap5/bootstrap.min.js"></script>
+<script src="./event_handlers.js"></script>
+<script src="./index.js"></script>
+<script src="./rfm_core.js"></script>
+
 </body>
 </html>

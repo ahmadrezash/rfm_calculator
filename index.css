@@ -1,0 +1,42 @@
+body {
+    font-family: 'Vazirmatn', sans-serif;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set to the height you want the background to cover */
+    margin: 0; /* Remove default body margin */
+}
+
+.nav-link {
+    color: #292D32; /* Default color for not selected */
+}
+
+.nav-pills .nav-link.active {
+    color: #BFA25D;
+    background-color: white;
+}
+
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('./assets/fonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
+    url('./assets/fonts/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set to the height you want the background to cover */
+    margin: 0; /* Remove default body margin */
+}
+
+h1 {
+    font-weight: bolder;
+}

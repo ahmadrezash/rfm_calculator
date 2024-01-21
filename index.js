@@ -57,30 +57,4 @@ function compute_global_res(all_res) {
 
 
 // Function to generate XLSX file
-function generateXLSX() {
-    state["rfmData"] = calculateRFM(state["orders"],state["score"]["monetary_rate"],state["score"]["frequency_rate"],state["score"]["recency_rate"]);
-    compute_global_res(state["rfmData"])
 
-    // Create XLSX workbook and worksheet
-    const workbook = XLSX.utils.book_new();
-    const worksheet = XLSX.utils.json_to_sheet([{
-        customer_id: '',
-        first_name: '',
-        last_name: '',
-        tel: '',
-        email: '',
-        rfm_score: '',
-        label: ''
-    }]);
-
-    XLSX.utils.sheet_add_json(worksheet, state["rfmData"]);
-
-    // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'RFM_Data');
-
-    // Save the workbook as a file
-    XLSX.writeFile(workbook, 'RFM_Analysis.xlsx');
-}
-
-document.getElementById('fileInput').addEventListener('change', handleFileInput);
-document.getElementById('param_rate_id').addEventListener('change', updateParamRate);
