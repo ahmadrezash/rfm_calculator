@@ -132,11 +132,18 @@
                                     </a>
                                 </div>
                                 <div class="col-10">
-                                    <button type="button" class="btn  btn-success rounded-pill" style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
-                                            data-bs-toggle="modal" data-bs-target="#resModal">
-                                        مشاهده نتایج
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="button" class="btn  btn-success rounded-pill" style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
+                                                    data-bs-toggle="modal" data-bs-target="#resModal">
+                                                مشاهده نتایج
+                                            </button>
 
+                                        </div>
+                                        <div class="col-12">
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -205,15 +212,20 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white" id="get_res_id">
+                <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white;width: 100%" id="get_res_id">
                     دریافت نتایج
                 </button>
-
                 <!-- Modern select input -->
                 <div class="mb-3">
                     <div class="row justify-content-center">
                         <div class="col-md-6 mt-3">
-
+                            <figure class="highcharts-figure">
+                                <div id="fig_container"></div>
+                                <p class="highcharts-description">
+                                    Pie chart where the individual slices can be clicked to expose more
+                                    detailed data.
+                                </p>
+                            </figure>
                             <table class="table" id="table_id">
                                 <thead>
                                 <tr>
@@ -227,6 +239,8 @@
 
                                 </tbody>
                             </table>
+
+
                         </div>
                     </div>
                 </div>
@@ -241,10 +255,17 @@
 <!-- Bootstrap JS (optional) -->
 <!--<script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"></script>-->
 <!--<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>-->
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
 <script src="./assets/libs/bootstrap5/bootstrap.min.js"></script>
 <script src="./event_handlers.js"></script>
 <script src="./index.js"></script>
 <script src="./rfm_core.js"></script>
-
 </body>
 </html>
