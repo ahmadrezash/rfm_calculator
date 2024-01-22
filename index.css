@@ -40,3 +40,17 @@ body {
 h1 {
     font-weight: bolder;
 }
+
+.custom-secondary {
+    background-color: white;
+    border-color: #BFA25D;
+    color: #BFA25D;
+}
+
+.custom-primary {
+    background-color: #BFA25D;
+    border-color: #BFA25D;
+    color: white;
+    width: 100%;
+}
+

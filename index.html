@@ -9,7 +9,9 @@
     <!-- Bootstrap CSS -->
 
     <link rel="stylesheet" href="./assets/libs/bootstrap5/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="index.css">
+
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -98,22 +100,20 @@
 
                         <div class="col-2"></div>
                     </div>
-
                     <div class="row">
                         <div class="col-2"></div>
                         <div class="col-8">
                             <div class="row mt-3">
                                 <div class="col-2">
-                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
+                                    <a type="button" class="btn btn-primary rounded-circle custom-secondary">
                                         <span style="font-size: small">2</span>
                                     </a>
                                 </div>
                                 <div class="col-8">
-                                    <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white;width: 100%;" id="run_id">اجرا</button>
+                                    <button type="button" class="btn btn-primary rounded-pill custom-primary" id="run_id">اجرا</button>
                                 </div>
                                 <div class="col-2">
-                                    <button class="btn rounded-circle btn-xl " type="button"
-                                            style="background-color:white; border-color: #BFA25D; color: #BFA25D;"
+                                    <button class="btn rounded-circle btn-xl custom-secondary" type="button"
                                             data-bs-toggle="modal" data-bs-target="#selectModal">
                                         <i class="fa fa-cog" aria-hidden="true"></i>
                                     </button>
@@ -126,15 +126,14 @@
                         <div class="col-8">
                             <div class="row">
                                 <div class="col-2">
-                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
-                                        <!-- Number inside the button -->
+                                    <a type="button" class="btn btn-primary rounded-circle custom-secondary">
                                         <span style="font-size: small">3</span>
                                     </a>
                                 </div>
                                 <div class="col-10">
                                     <div class="row">
                                         <div class="col-12">
-                                            <button type="button" class="btn  btn-success rounded-pill" style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
+                                            <button type="button" class="btn  btn-success rounded-pill custom-primary"
                                                     data-bs-toggle="modal" data-bs-target="#resModal">
                                                 مشاهده نتایج
                                             </button>
@@ -166,8 +165,13 @@
                 <!-- Modern file input -->
                 <div class="mb-3">
                     <!--                    <label for="fileInput" class="form-label">Choose a file</label>-->
-                    <input type="file" class="form-control" id="fileInput" aria-describedby="fileHelp">
                     <div id="fileHelp" class="form-text">فایل را انتخاب کنید</div>
+                    <input type="file" class="custom-file-input" id="fileInput">
+                    <label class="custom-file-input-button btn" for="fileInput">
+                        <i class="fa fa-upload" aria-hidden="true"></i>
+                    </label>
+
+                    <!--                    <input type="file" class="form-control" id="fileInput" aria-describedby="fileHelp">-->
                     <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
                 </div>
                 <!-- Additional content can be added here -->
@@ -182,24 +186,25 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modernModalLabel">Modern Modal with Select Input</h5>
+                <h5 class="modal-title" id="modernModalLabel">تنظیمات پیشرفته</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <!-- Modern select input -->
                 <div class="mb-3">
-                    <label for="param_rate_id" class="form-label">Select an option</label>
-                    <select class="form-select" id="param_rate_id" aria-label="Select an option" data-mobile="True">
-                        <option selected>Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                    <label for="param_rate_id"> در تحلیل شما کدوم مهمتره؟</label>
+                    <select name="param_rate" id="param_rate_id">
+                        <option value="equal_rate" selected>اهمیت برابر</option>
+                        <option value="frequency_rate">تکرار خرید</option>
+                        <option value="monetary_rate">ارزش خرید</option>
+                        <option value="recency_rate">آخرین خرید</option>
                     </select>
                 </div>
                 <!-- Additional content can be added here -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-primary rounded-pill custom-primary">ذخیره تغییرات</button>
+                <button type="button" class="btn btn-secondary rounded-pill custom-secondary" data-bs-dismiss="modal">بستن</button>
             </div>
         </div>
     </div>
