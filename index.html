@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Icon-Based Bottom Navigation Bar</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/504629.png">
+    <title>مشتری شناس</title>
 
     <script src="./assets/libs/xlsx/xlsx.full.min.js"></script>
     <!-- Bootstrap CSS -->
@@ -15,7 +16,6 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
 <div class="container mt-5">
     <!-- Nav tabs -->
     <ul class="nav nav-pills nav-justified fixed-bottom p-0" id="myTabs">
@@ -66,86 +66,16 @@
                     </p>
                 </div>
 
-                <!--            <div class="embed-responsive embed-responsive-16by9">-->
-                <!--                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" width="100%" height=""></iframe>-->
-                <!--            </div>-->
+                <div class="container-fluid m-2" id="49596339481">
+                    <script type="text/JavaScript" src="https://www.aparat.com/embed/n9V1W?data[rnddiv]=49596339481&data[responsive]=yes"></script>
+                </div>
                 <div class="mx-auto">
                     <div class="row">
                         <div class="col-2"></div>
                         <div class="col-8">
-                            <div class="row">
-                                <div class="col-2">
-                                    <a type="button" class="btn btn-primary rounded-circle" style="background-color:white; border-color: #BFA25D; color: #BFA25D">
-                                        <!-- Number inside the button -->
-                                        <span style="font-size: small">1</span>
-                                    </a>
-
-                                </div>
-                                <div class="col-10">
-                                    <button type="button" class="btn  btn-success rounded-pill"
-                                            style="background-color: #BFA25D; border: #BFA25D;width: 100%;"
-                                            data-bs-toggle="modal" data-bs-target="#input_file_modal_id">
-                                        انتخاب فایل
-                                    </button>
-                                </div>
-                            </div>
-                            <!--                            <div class="col-2 ">-->
-                            <!--                                <button class="btn rounded-circle btn-xl " type="button"-->
-                            <!--                                        style="background-color:white; border-color: #BFA25D; color: #BFA25D;"-->
-                            <!--                                        data-bs-toggle="modal" data-bs-target="#selectModal">-->
-                            <!--                                    <i class="fa fa-cog" aria-hidden="true"></i>-->
-                            <!--                                </button>-->
-                            <!--                            </div>-->
-                        </div>
-
-                        <div class="col-2"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col-2"></div>
-                        <div class="col-8">
-                            <div class="row mt-3">
-                                <div class="col-2">
-                                    <a type="button" class="btn btn-primary rounded-circle custom-secondary">
-                                        <span style="font-size: small">2</span>
-                                    </a>
-                                </div>
-                                <div class="col-8">
-                                    <button type="button" class="btn btn-primary rounded-pill custom-primary" id="run_id">اجرا</button>
-                                </div>
-                                <div class="col-2">
-                                    <button class="btn rounded-circle btn-xl custom-secondary" type="button"
-                                            data-bs-toggle="modal" data-bs-target="#selectModal">
-                                        <i class="fa fa-cog" aria-hidden="true"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-2"></div>
-                        <div class="col-8">
-                            <div class="row">
-                                <div class="col-2">
-                                    <a type="button" class="btn btn-primary rounded-circle custom-secondary">
-                                        <span style="font-size: small">3</span>
-                                    </a>
-                                </div>
-                                <div class="col-10">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <button type="button" class="btn  btn-success rounded-pill custom-primary"
-                                                    data-bs-toggle="modal" data-bs-target="#resModal">
-                                                مشاهده نتایج
-                                            </button>
-
-                                        </div>
-                                        <div class="col-12">
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <button type="button" class="btn  btn-success rounded-pill custom-primary" data-bs-toggle="modal" data-bs-target="#start_modal_id">
+                                شروع
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -154,6 +84,73 @@
     </div>
 </div>
 <!-- Modal -->
+<div class=" modal fade" id="start_modal_id" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                محسابه گر RFM
+            </div>
+            <div class="modal-body">
+
+                <div class="mb-3 container-fluid ">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <button class="btn rounded-pill custom-secondary mb-2" href="#" style="width: 30%;border: white">
+                            مرحله ۱
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type='file' id="fileInput" style="display:none">
+                            <label class="custom-file-input-button btn" for="fileInput">
+                                از
+                                <a href="./Sales.xlsx" download="sample.xlsx">نمونه ورودی</a>
+                                استفاده کنید یا
+
+                                <button class="btn rounded-pill btn-xl custom-secondary" onclick="document.getElementById('fileInput').click()">
+                                    فایل خود
+                                </button>
+
+                                را آپلود کنید
+                            </label>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <button class="btn disabled rounded-pill custom-secondary mb-2" href="#" style="width: 30%;border: white">
+                            مرحله ۲
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary rounded-pill custom-primary" id="run_id">آنالیز کن</button>
+                        </div>
+                        <div class="col-2">
+                            <!--                            <button class="btn rounded-circle btn-xl custom-secondary" type="button" data-bs-toggle="modal" data-bs-target="#selectModal">-->
+                            <!--                                <i class="fa fa-cog" aria-hidden="true"></i>-->
+                            <!--                            </button>-->
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <button class="btn disabled rounded-pill custom-secondary mb-2" href="#" style="width: 30%;border: white">
+                            مرحله ۳
+                        </button>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <button type="button" class="btn  btn-success rounded-pill custom-primary" data-bs-toggle="modal" data-bs-target="#resModal">
+                                مشاهده نتایج
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">بازگشت</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class=" modal fade" id="input_file_modal_id" tabindex="-1" aria-labelledby="centeredModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -165,11 +162,11 @@
                 <!-- Modern file input -->
                 <div class="mb-3">
                     <!--                    <label for="fileInput" class="form-label">Choose a file</label>-->
-                    <div id="fileHelp" class="form-text">فایل را انتخاب کنید</div>
-                    <input type="file" class="custom-file-input" id="fileInput">
-                    <label class="custom-file-input-button btn" for="fileInput">
-                        <i class="fa fa-upload" aria-hidden="true"></i>
-                    </label>
+                    <!--                    <div id="fileHelp" class="form-text">فایل را انتخاب کنید</div>-->
+                    <!--                    <input type="file" class="custom-file-input" id="fileInput">-->
+                    <!--                    <label class="custom-file-input-button btn" for="fileInput">-->
+                    <!--                        <i class="fa fa-upload" aria-hidden="true"></i>-->
+                    <!--                    </label>-->
 
                     <!--                    <input type="file" class="form-control" id="fileInput" aria-describedby="fileHelp">-->
                     <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
@@ -218,19 +215,19 @@
             </div>
             <div class="modal-body">
                 <button type="button" class="btn btn-primary rounded-pill" style="background-color:#BFA25D; border-color: #BFA25D; color: white;width: 100%" id="get_res_id">
-                    دریافت نتایج
+                    دریافت نمونه نتایج
                 </button>
                 <!-- Modern select input -->
                 <div class="mb-3">
                     <div class="row justify-content-center">
                         <div class="col-md-6 mt-3">
-                            <figure class="highcharts-figure">
-                                <div id="fig_container"></div>
-                                <p class="highcharts-description">
-                                    Pie chart where the individual slices can be clicked to expose more
-                                    detailed data.
-                                </p>
-                            </figure>
+<!--                            <figure class="highcharts-figure">-->
+<!--                                <div id="fig_container"></div>-->
+<!--                                <p class="highcharts-description">-->
+<!--                                    Pie chart where the individual slices can be clicked to expose more-->
+<!--                                    detailed data.-->
+<!--                                </p>-->
+<!--                            </figure>-->
                             <table class="table" id="table_id">
                                 <thead>
                                 <tr>
@@ -252,7 +249,7 @@
                 <!-- Additional content can be added here -->
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
             </div>
         </div>
     </div>

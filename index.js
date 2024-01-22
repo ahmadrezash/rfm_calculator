@@ -78,7 +78,7 @@ Highcharts.chart('fig_container', {
             cursor: 'pointer',
             dataLabels: [{
                 enabled: true,
-                distance: 20
+                    distance: 20
             }, {
                 enabled: true,
                 distance: -40,

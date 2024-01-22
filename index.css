@@ -54,3 +54,12 @@ h1 {
     width: 100%;
 }
 
+a {
+    color: #BFA25D;
+
+}
+
+a:hover {
+    color: #7c693e;
+}
+

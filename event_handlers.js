@@ -37,6 +37,7 @@ function handleFileInput(event) {
         };
 
         reader.readAsArrayBuffer(file);
+
     }
 }
 
@@ -86,8 +87,28 @@ function calculate_handler() {
     // modal.hide();
 }
 
+function getRandomItems(list, numberOfItems) {
+    const randomItems = [];
+
+    // Ensure the requested number of items is not greater than the list length
+    numberOfItems = Math.min(numberOfItems, list.length);
+
+    while (randomItems.length < numberOfItems) {
+        const randomIndex = Math.floor(Math.random() * list.length);
+        const randomItem = list[randomIndex];
+
+        // Ensure the selected item is not already in the result array
+        if (!randomItems.includes(randomItem)) {
+            randomItems.push(randomItem);
+        }
+    }
+
+    return randomItems;
+}
+
+// Example usage
 function generateXLSX() {
-        if (state["rfmData"].length === 0) {
+    if (state["rfmData"].length === 0) {
         showAlert('لطفا ابتدا اجرا را کلیک کنین', 'danger');
         return 0;
     }
@@ -102,8 +123,9 @@ function generateXLSX() {
         rfm_score: '',
         label: ''
     }]);
+    const randomItems = getRandomItems(state["rfmData"], 5);
 
-    XLSX.utils.sheet_add_json(worksheet, state["rfmData"]);
+    XLSX.utils.sheet_add_json(worksheet, randomItems);
 
     // Add the worksheet to the workbook
     XLSX.utils.book_append_sheet(workbook, worksheet, 'RFM_Data');
