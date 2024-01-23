@@ -134,35 +134,7 @@ function generateXLSX() {
     XLSX.writeFile(workbook, 'RFM_Analysis.xlsx');
 }
 
-// function send_data() {
-//     const bale_token = "2097543119:AtXnn9erZkpJnutl6qukcg2DBZhnED9X4eE9gUpq";
-//     const bale_bot_name = "frm_bot"
-//     let url = `https://tapi.bale.ai/bot${bale_token}/sendMessage`
-//
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("POST", url, true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState == 4) {
-//             if (xhr.status == 200) {
-//                 var data = JSON.parse(xhr.responseText);
-//                 console.log(data);
-//             } else {
-//                 console.error("Error:", xhr.status, xhr.statusText);
-//             }
-//         }
-//     };
-//
-//     var postData = {
-//         chat_id: "ahmadsharifian",
-//         text: "سلام"
-//     };
-//
-//     xhr.send(JSON.stringify(postData));
-// }
 
-xhr.send();
 document.getElementById('fileInput').addEventListener('change', handleFileInput);
 document.getElementById('param_rate_id').addEventListener('change', updateParamRateHandler);
 document.getElementById('run_id').addEventListener('click', calculate_handler);
