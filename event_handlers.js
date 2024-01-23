@@ -53,7 +53,7 @@ function sleep(ms) {
 function showAlert(message, type) {
     // Create alert element
     const alertElement = document.createElement('div');
-    alertElement.className = `alert alert-${type} alert-dismissible fade show`;
+    alertElement.className = `alert alert-${type} alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x`;
     alertElement.role = 'alert';
     alertElement.innerHTML = `
             ${message}
@@ -61,7 +61,7 @@ function showAlert(message, type) {
         `;
 
     // Append alert to the document
-    document.body.appendChild(alertElement);
+    document.getElementById("start_modal_id").appendChild(alertElement);
 
     // Automatically close the alert after 3 seconds
     setTimeout(() => {

@@ -19,16 +19,25 @@ body {
 
 
 @font-face {
-    font-family: 'Vazirmatn';
-    src: url('./assets/fonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
-    url('./assets/fonts/Vazirmatn[wght].woff2') format('woff2-variations');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
+    font-family: 'Anjomanweb VF';
+    src: url('./assets/fonts/AnjomanwebGX.woff') format('woff-variations'),
+        /* will be the standard and works in Safari now */ url('./assets/fonts/AnjomanwebGX.woff') format('woff');
+    /* for the other supporting browsers */
+    font-display: fallback;
+}
+
+
+body {
+    font-family: Anjomanweb, tahoma, serif;
+}
+
+@supports (font-variation-settings: normal) {
+    body {
+        font-family: 'Anjomanweb VF', tahoma, serif;
+    }
 }
 
 body {
-    font-family: 'Vazirmatn', sans-serif;
 
     background-size: cover;
     background-position: center;
@@ -54,6 +63,10 @@ h1 {
     width: 100%;
 }
 
+.custom-primary:hover {
+    background-color: #157347;
+}
+
 a {
     color: #BFA25D;
 
@@ -63,3 +76,19 @@ a:hover {
     color: #7c693e;
 }
 
+.image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.overlay-element {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    /*transform: translate(-50%, -50%);*/
+    /*background-color: rgba(255, 255, 255, 0.7); !* Adjust the background color and opacity *!*/
+    /*padding: 20px;*/
+    border-radius: 10px;
+    color: #333; /* Adjust the text color */
+}
