@@ -58,71 +58,71 @@ function compute_global_res(all_res) {
 
 // Function to generate XLSX file
 // Create the chart
-Highcharts.chart('fig_container', {
-    chart: {
-        type: 'pie'
-    },
-    title: {
-        text: 'تحلیل بخش بندی مشتری'
-    },
-    tooltip: {
-        valueSuffix: '%'
-    },
-    subtitle: {
-        text:
-        'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
-    },
-    plotOptions: {
-        series: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: [{
-                enabled: true,
-                    distance: 20
-            }, {
-                enabled: true,
-                distance: -40,
-                format: '{point.percentage:.1f}%',
-                style: {
-                    fontSize: '1.2em',
-                    textOutline: 'none',
-                    opacity: 0.7
-                },
-                filter: {
-                    operator: '>',
-                    property: 'percentage',
-                    value: 10
-                }
-            }]
-        }
-    },
-    series: [
-        {
-            name: 'Percentage',
-            colorByPoint: true,
-            data: [
-                {
-                    name: 'Champions',
-                    y: 55.02
-                },
-                {
-                    name: 'Loyal Customers',
-                    y: 26.71
-                },
-                {
-                    name: 'Potential Loyalists',
-                    y: 1.09
-                },
-                {
-                    name: 'New Customers',
-                    y: 15.5
-                },
-                {
-                    name: 'Promising',
-                    y: 1.68
-                }
-            ]
-        }
-    ]
-});
-
+// Highcharts.chart('fig_container', {
+//     chart: {
+//         type: 'pie'
+//     },
+//     title: {
+//         text: 'تحلیل بخش بندی مشتری'
+//     },
+//     tooltip: {
+//         valueSuffix: '%'
+//     },
+//     subtitle: {
+//         text:
+//         'Source:<a href="https://www.mdpi.com/2072-6643/11/3/684/htm" target="_default">MDPI</a>'
+//     },
+//     plotOptions: {
+//         series: {
+//             allowPointSelect: true,
+//             cursor: 'pointer',
+//             dataLabels: [{
+//                 enabled: true,
+//                     distance: 20
+//             }, {
+//                 enabled: true,
+//                 distance: -40,
+//                 format: '{point.percentage:.1f}%',
+//                 style: {
+//                     fontSize: '1.2em',
+//                     textOutline: 'none',
+//                     opacity: 0.7
+//                 },
+//                 filter: {
+//                     operator: '>',
+//                     property: 'percentage',
+//                     value: 10
+//                 }
+//             }]
+//         }
+//     },
+//     series: [
+//         {
+//             name: 'Percentage',
+//             colorByPoint: true,
+//             data: [
+//                 {
+//                     name: 'Champions',
+//                     y: 55.02
+//                 },
+//                 {
+//                     name: 'Loyal Customers',
+//                     y: 26.71
+//                 },
+//                 {
+//                     name: 'Potential Loyalists',
+//                     y: 1.09
+//                 },
+//                 {
+//                     name: 'New Customers',
+//                     y: 15.5
+//                 },
+//                 {
+//                     name: 'Promising',
+//                     y: 1.68
+//                 }
+//             ]
+//         }
+//     ]
+// });
+//
