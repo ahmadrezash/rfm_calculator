@@ -183,11 +183,11 @@
                         <img src="assets/img/man_phone.png" width="100%" alt="...">
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center mt-0">
                     <div class="col-10 text-center">
-                        <button type="button" class="btn  btn-success rounded-pill custom-primary p-2"
+                        <button type="button" class="btn btn-success rounded-pill custom-primary p-2 animated-btn"
                             data-bs-toggle="modal" data-bs-target="#contactModal">
-                            مشاوره بگیر
+                            مشاوره بازاریابی می خوام!
                         </button>
                     </div>
                 </div>
@@ -216,7 +216,8 @@
                             </p>
                         </div>
                     </div>
-                    <img src="./assets/img/rfm-model.webp" width="100%" alt="..." />
+                    <img src="./assets/img/RFM.png" width="100%" alt="..." />
+                    <!-- <img src="./assets/img/rfm-model.webp" width="100%" alt="..." /> -->
                     <div class="container mt-4">
                         <div class="d-flex justify-content-between">
 
@@ -234,21 +235,21 @@
                     </div>
                     <div class="row  mb-4 justify-content-center">
                         <div class="col-4 text-center">
-                            <button type="button" class="btn btn-success"
-                                style="background: white;border:white;color: #BFA25D;" data-bs-toggle="modal"
-                                data-bs-target="#videoModal">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="3em" fill="currentColor"
+                            <!-- <button type="button" class="btn btn-success " -->
+                            <!-- style="background: white;border:white;color: #BFA25D;" data-bs-toggle="modal" -->
+                            <!-- data-bs-target="#videoModal"> -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" height="3em" fill="currentColor"
                                     viewBox="0 0 512 512">
                                     <path
                                         d="M 464 256 Q 464 199 436 152 L 436 152 Q 409 105 360 76 Q 311 48 256 48 Q 201 48 152 76 Q 103 105 76 152 Q 48 199 48 256 Q 48 313 76 360 Q 103 407 152 436 Q 201 464 256 464 Q 311 464 360 436 Q 409 407 436 360 Q 464 313 464 256 L 464 256 Z M 0 256 Q 1 186 34 128 L 34 128 Q 68 70 128 34 Q 189 0 256 0 Q 323 0 384 34 Q 444 70 478 128 Q 511 186 512 256 Q 511 326 478 384 Q 444 442 384 478 Q 323 512 256 512 Q 189 512 128 478 Q 68 442 34 384 Q 1 326 0 256 L 0 256 Z M 188 147 Q 201 141 213 148 L 357 236 Q 368 243 368 256 Q 368 269 357 277 L 213 365 Q 201 371 188 365 Q 176 358 176 344 L 176 168 Q 176 154 188 147 L 188 147 Z" />
-                                </svg>
-                            </button>
+                                </svg> -->
+                            <!-- </button> -->
                         </div>
                     </div>
                     <div class="row">
                         <!-- <div class="col-2"></div> -->
                         <div class="col-12">
-                            <button type="button" class="btn  btn-success rounded-pill custom-primary p-2"
+                            <button type="button" class="btn  btn-success rounded-pill custom-primary animated-btn p-2 "
                                 data-bs-toggle="modal" data-bs-target="#start_modal_id">
                                 همین الان شروع کن
                             </button>
@@ -341,19 +342,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Modern file input -->
                     <div class="mb-3">
-                        <!--                    <label for="fileInput" class="form-label">Choose a file</label>-->
-                        <!--                    <div id="fileHelp" class="form-text">فایل را انتخاب کنید</div>-->
-                        <!--                    <input type="file" class="custom-file-input" id="fileInput">-->
-                        <!--                    <label class="custom-file-input-button btn" for="fileInput">-->
-                        <!--                        <i class="fa fa-upload" aria-hidden="true"></i>-->
-                        <!--                    </label>-->
-
-                        <!--                    <input type="file" class="form-control" id="fileInput" aria-describedby="fileHelp">-->
                         <a href="./Sales.xlsx" download="sample.xlsx" class="">نمونه ورودی</a>
                     </div>
-                    <!-- Additional content can be added here -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">بازگشت</button>
@@ -399,37 +390,45 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <button type="button" class="btn btn-primary rounded-pill p-2"
-                        style="background-color:#BFA25D; border-color: #BFA25D; color: white;width: 100%"
-                        id="get_res_id">
-                        دریافت نمونه نتایج
-                    </button>
-                    <!-- Modern select input -->
-                    <div class="mb-3">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 mt-3">
-                                <table class="table" id="table_id">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">عنوان</th>
-                                            <th scope="col">تعداد</th>
-                                            <th scope="col">درصد</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-primary rounded-pill p-2 custom-secondary"
+                                id="get_res_id" style="font-weight: 300;font-size: .85rem;width: 100%;">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                دریافت نمونه نتایج
+                            </button>
 
-                                    </tbody>
-                                </table>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" class="btn  btn-success rounded-pill custom-primary p-2"
+                                data-bs-toggle="modal" data-bs-target="#contactModal">
+                                مشاوره می خوام!
+                            </button>
+                        </div>
+                        <!-- Modern select input -->
+                        <div class="mb-3">
+                            <div class="row justify-content-center">
+                                <div class="col-md-6 mt-3">
+                                    <table class="table" id="table_id">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">عنوان</th>
+                                                <th scope="col">تعداد</th>
+                                                <th scope="col">درصد</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <!-- Additional content can be added here -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">بستن</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -445,9 +444,7 @@
                 </div>
 
                 <div class="modal-body">
-                    <img class="image"
-                        src="https://images.adsttc.com/media/images/5b08/b87c/f197/ccb5/4900/00bd/slideshow/The_S_02_filter_edit2_06.jpg?1527298139"
-                        width="100%" alt="...">
+                    <img class="image" src="./assets/img/RFM.png" width="100%" alt="...">
                 </div>
             </div>
         </div>
@@ -470,11 +467,8 @@
                             </p>
                             <p class="mt-3">
                                 <a href="tel:989198258119">09198258119</a>
-
                             </p>
-
                         </div>
-
                     </div>
                 </div>
             </div>

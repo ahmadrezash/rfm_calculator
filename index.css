@@ -106,4 +106,23 @@ a:hover {
 
 button {
     font-weight: 750 !important;
+    
+}
+
+@keyframes pulse-animation {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-success.animated-btn {
+    animation: pulse-animation 2s infinite;
 }
