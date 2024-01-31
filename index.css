@@ -4,12 +4,15 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Set to the height you want the background to cover */
-    margin: 0; /* Remove default body margin */
+    height: 100vh;
+    /* Set to the height you want the background to cover */
+    margin: 0;
+    /* Remove default body margin */
 }
 
 .nav-link {
-    color: #292D32; /* Default color for not selected */
+    color: #292D32;
+    /* Default color for not selected */
 }
 
 .nav-pills .nav-link.active {
@@ -21,7 +24,8 @@ body {
 @font-face {
     font-family: 'Anjomanweb VF';
     src: url('./assets/fonts/AnjomanwebGX.woff') format('woff-variations'),
-        /* will be the standard and works in Safari now */ url('./assets/fonts/AnjomanwebGX.woff') format('woff');
+        /* will be the standard and works in Safari now */
+        url('./assets/fonts/AnjomanwebGX.woff') format('woff');
     /* for the other supporting browsers */
     font-display: fallback;
 }
@@ -42,8 +46,10 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; /* Set to the height you want the background to cover */
-    margin: 0; /* Remove default body margin */
+    height: 100vh;
+    /* Set to the height you want the background to cover */
+    margin: 0;
+    /* Remove default body margin */
 }
 
 h1 {
@@ -90,9 +96,14 @@ a:hover {
     /*background-color: rgba(255, 255, 255, 0.7); !* Adjust the background color and opacity *!*/
     /*padding: 20px;*/
     border-radius: 10px;
-    color: #333; /* Adjust the text color */
+    color: #333;
+    /* Adjust the text color */
 }
 
 #home-page-container {
     background-image: url('./assets/img/man_phone.png');
+}
+
+button {
+    font-weight: 750 !important;
 }
